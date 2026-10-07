@@ -1,0 +1,33 @@
+### Variables
+#@baseUrl = http://localhost:7252/api
+@baseUrl = https://travelplanner-functions-cnhhbkcrbne8bdcx.australiasoutheast-01.azurewebsites.net/api
+@instanceId = {{startTravelPlanning.response.body.id}}
+
+### Start a new travel planning process
+# @name startTravelPlanning
+POST {{baseUrl}}/travel-planner
+Content-Type: application/json
+
+{
+    "userName": "Solly Fathi",
+    "preferences": "I enjoy Tokyo's vibrant nightlife, iconic city sights and amazing food, with a relaxing beach escape to Kamakura or nearby Enoshima. A perfect mix of city vibes, nightlife, culture and coastal time.",
+    "durationInDays": 1,
+    "budget": "Moderate, around $1000 total",
+    "travelDates": "January 10-11, 2027",
+    "specialRequirements": "Would prefer accommodations with shared kitchen."
+}
+
+### Check status with explicit instance ID
+GET {{baseUrl}}/travel-planner/status/{{instanceId}}
+
+### Get the travel plan confirmation status
+GET {{baseUrl}}/travel-planner/confirmation/{{instanceId}}
+
+### Approve Travel
+POST {{baseUrl}}/travel-planner/approve/{{instanceId}}
+Content-Type: application/json
+
+{
+    "approved": true,
+    "comments": "The itinerary looks great! Looking forward to the trip."
+}
