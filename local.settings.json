@@ -5,12 +5,12 @@
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
     "DURABLE_TASK_SCHEDULER_CONNECTION_STRING": "Endpoint=https://fluent-dts-awcwd9abgshuf.australiasoutheast.durabletask.io;Authentication=DefaultAzure",
     "TASKHUB_NAME": "TravelPlannerHub",
+    "DESTINATION_RECOMMENDER_AGENT_ID": "destination-recommender",
+    "ITINERARY_PLANNER_AGENT_ID": "itinerary-planner",
+    "LOCAL_RECOMMENDATIONS_AGENT_ID": "local-recommendations",
     "DESTINATION_RECOMMENDER_CONNECTION": "https://foundry-app-resource.services.ai.azure.com/api/projects/foundry-app",
-    "DESTINATION_RECOMMENDER_AGENT_ID": "destination-recommender-agent",
     "ITINERARY_PLANNER_CONNECTION": "https://foundry-app-resource.services.ai.azure.com/api/projects/foundry-app",
-    "ITINERARY_PLANNER_AGENT_ID": "itinerary-planner-agent",
-    "LOCAL_RECOMMENDATIONS_CONNECTION": "https://foundry-app-resource.services.ai.azure.com/api/projects/foundry-app",
-    "LOCAL_RECOMMENDATIONS_AGENT_ID": "local-recommendations-agent"
+    "LOCAL_RECOMMENDATIONS_CONNECTION": "https://foundry-app-resource.services.ai.azure.com/api/projects/foundry-app"    
   },
   "Host": {
     "LocalHttpPort": 7252,

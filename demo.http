@@ -1,6 +1,6 @@
 ### Variables
-#@baseUrl = http://localhost:7252/api
-@baseUrl = https://travelplanner-functions-cnhhbkcrbne8bdcx.australiasoutheast-01.azurewebsites.net/api
+@baseUrl = http://localhost:7252/api
+#@baseUrl = https://travelplanner-functions-cnhhbkcrbne8bdcx.australiasoutheast-01.azurewebsites.net/api
 @instanceId = {{startTravelPlanning.response.body.id}}
 
 ### Start a new travel planning process
