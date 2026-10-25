@@ -103,7 +103,7 @@ public abstract class BaseAgentService : IAgentService
 
                 var clientId = Environment.GetEnvironmentVariable("AZURE_CLIENT_ID");
                 TokenCredential credential = string.IsNullOrWhiteSpace(clientId) ? 
-                    new AzureDeveloperCliCredential(): 
+                    new AzureCliCredential(): 
                     new ManagedIdentityCredential(ManagedIdentityId.FromUserAssignedClientId(clientId));
 
                 var endpoint = $"{ConnectionString.TrimEnd('/')}" + $"/agents/{Uri.EscapeDataString(AgentId)}" + "/endpoint/protocols/openai/responses?api-version=v1";

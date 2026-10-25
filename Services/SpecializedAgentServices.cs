@@ -9,7 +9,7 @@ namespace TravelPlannerFunctions.Services;
 /// </summary>
 public class DestinationRecommenderService : BaseAgentService
 {
-    private const string AgentIdEnvVar = "DESTINATION_RECOMMENDER_AGENT_ID";
+    private const string AgentIdEnvVar = "DESTINATION_RECOMMENDER_AGENT_NAME";
 
     public DestinationRecommenderService(string connectionString, ILogger<DestinationRecommenderService> logger)
         : base(GetAgentIdentifier(AgentIdEnvVar), connectionString, logger)
@@ -58,7 +58,7 @@ public class DestinationRecommenderService : BaseAgentService
 /// </summary>
 public class ItineraryPlannerService : BaseAgentService
 {
-    private const string AgentIdEnvVar = "ITINERARY_PLANNER_AGENT_ID";
+    private const string AgentIdEnvVar = "ITINERARY_PLANNER_AGENT_NAME";
 
     public ItineraryPlannerService(string connectionString, ILogger<ItineraryPlannerService> logger) 
         : base(GetAgentIdentifier(AgentIdEnvVar), connectionString, logger)
@@ -290,7 +290,7 @@ public class ItineraryPlannerService : BaseAgentService
 /// </summary>
 public class LocalRecommendationsService : BaseAgentService
 {
-    private const string AgentIdEnvVar = "LOCAL_RECOMMENDATIONS_AGENT_ID";
+    private const string AgentIdEnvVar = "LOCAL_RECOMMENDATIONS_AGENT_NAME";
 
     public LocalRecommendationsService(string connectionString, ILogger<LocalRecommendationsService> logger) 
         : base(GetAgentIdentifier(AgentIdEnvVar), connectionString, logger)

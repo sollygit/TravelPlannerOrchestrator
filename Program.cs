@@ -14,30 +14,29 @@ var host = new HostBuilder()
         services.AddLogging();
         services.AddSingleton((serviceProvider) =>
         {
-            
             var configuration = serviceProvider.GetRequiredService<IConfiguration>();
             var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
-            var destinationConnectionString = configuration["DESTINATION_RECOMMENDER_CONNECTION"] ?? throw new InvalidOperationException("Destination recommender connection is not configured");
+            var projectConnectionString = configuration["PROJECT_CONNECTION_STRING"] ?? throw new InvalidOperationException("Project connection is not configured");
             var logger = loggerFactory.CreateLogger<DestinationRecommenderService>();
-            return new DestinationRecommenderService(destinationConnectionString, loggerFactory.CreateLogger<DestinationRecommenderService>());
+            return new DestinationRecommenderService(projectConnectionString, logger);
         });
         
         services.AddSingleton((serviceProvider) =>
         {
             var configuration = serviceProvider.GetRequiredService<IConfiguration>();
             var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
-            var itineraryConnectionString = configuration["ITINERARY_PLANNER_CONNECTION"] ?? throw new InvalidOperationException("Itinerary planner connection string is not configured");
+            var projectConnectionString = configuration["PROJECT_CONNECTION_STRING"] ?? throw new InvalidOperationException("Project connection is not configured");
             var logger = loggerFactory.CreateLogger<ItineraryPlannerService>();
-            return new ItineraryPlannerService(itineraryConnectionString, loggerFactory.CreateLogger<ItineraryPlannerService>());
+            return new ItineraryPlannerService(projectConnectionString, logger);
         });
 
         services.AddSingleton((serviceProvider) =>
         {
             var configuration = serviceProvider.GetRequiredService<IConfiguration>();
             var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
-            var localRecommendationsConnectionString = configuration["LOCAL_RECOMMENDATIONS_CONNECTION"] ?? throw new InvalidOperationException("Local recommendations connection is not configured");
+            var projectConnectionString = configuration["PROJECT_CONNECTION_STRING"] ?? throw new InvalidOperationException("Project connection is not configured");
             var logger = loggerFactory.CreateLogger<LocalRecommendationsService>();
-            return new LocalRecommendationsService(localRecommendationsConnectionString, loggerFactory.CreateLogger<LocalRecommendationsService>());
+            return new LocalRecommendationsService(projectConnectionString, logger);
         });
 
         // Older package versions expose AddAzureClients(Action<AzureClientFactoryBuilder>) only.
@@ -48,7 +47,7 @@ var host = new HostBuilder()
             var configuration = serviceProvider.GetRequiredService<IConfiguration>();
             var clientId = configuration["AZURE_CLIENT_ID"] ?? Environment.GetEnvironmentVariable("AZURE_CLIENT_ID");
             TokenCredential credential = string.IsNullOrWhiteSpace(clientId) ? 
-                new AzureDeveloperCliCredential() : 
+                new AzureCliCredential() : 
                 new ManagedIdentityCredential(ManagedIdentityId.FromUserAssignedClientId(clientId));
 
             clientBuilder.UseCredential(credential);

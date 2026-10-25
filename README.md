@@ -113,7 +113,7 @@ Create a `local.settings.json` file in the root directory with the following con
     "DESTINATION_RECOMMENDER_CONNECTION": "<PROJECT_CONNECTION_STRING>",
     "ITINERARY_PLANNER_CONNECTION": "<PROJECT_CONNECTION_STRING>",
     "LOCAL_RECOMMENDATIONS_CONNECTION": "<PROJECT_CONNECTION_STRING>",
-    "DESTINATION_RECOMMENDER_AGENT_ID": "<DESTINATION_RECOMMENDER_AGENT_ID>",
+    "DESTINATION_RECOMMENDER_AGENT_NAME": "<DESTINATION_RECOMMENDER_AGENT_NAME>",
     "ITINERARY_PLANNER_AGENT_ID": "<ITINERARY_PLANNER_AGENT_ID>",
     "LOCAL_RECOMMENDATIONS_AGENT_ID": "<LOCAL_RECOMMENDATIONS_AGENT_ID>"
   },
@@ -245,7 +245,7 @@ price ranges, and practical local tips that tourists wouldn't typically know.
 Update your application settings with the proper agent connection strings and IDs:
 
 ```bash
-azd env set DESTINATION_RECOMMENDER_AGENT_ID "your-agent-id"
+azd env set DESTINATION_RECOMMENDER_AGENT_NAME "your-agent-name"
 azd env set DESTINATION_RECOMMENDER_CONNECTION "your-connection-string"
 azd env set ITINERARY_PLANNER_AGENT_ID "your-agent-id"
 azd env set ITINERARY_PLANNER_CONNECTION "your-connection-string"
