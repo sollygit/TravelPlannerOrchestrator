@@ -5,7 +5,7 @@
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
     "DURABLE_TASK_SCHEDULER_CONNECTION_STRING": "Endpoint=https://fluent-dts-awcwd9abgshuf.australiasoutheast.durabletask.io;Authentication=DefaultAzure",
     "TASKHUB_NAME": "TravelPlannerHub",
-    "PROJECT_CONNECTION_STRING": "https://project-spark-resource.services.ai.azure.com/api/projects/project-spark",
+    "PROJECT_CONNECTION_STRING": "https://ai-foundry-spark-resource.services.ai.azure.com/api/projects/ai-foundry-spark",
     "DESTINATION_RECOMMENDER_AGENT_NAME": "destination-recommender",
     "ITINERARY_PLANNER_AGENT_NAME": "itinerary-planner",
     "LOCAL_RECOMMENDATIONS_AGENT_NAME": "local-recommendations"
